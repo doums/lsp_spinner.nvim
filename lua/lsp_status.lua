@@ -62,6 +62,7 @@ local function get_clients_by_bufnr(bufnr)
 end
 
 local function get_status(bufnr)
+  bufnr = bufnr or vim.api.nvim_get_current_buf()
   clean_stopped_clients()
   local status = ''
   local ids = get_clients_by_bufnr(bufnr)
